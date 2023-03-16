@@ -175,6 +175,7 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   outline: none;
+  border: none;
   padding: 16px;
   border-radius: 36px;
   background-color: var(--color-very-light-gray);
