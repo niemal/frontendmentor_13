@@ -66,8 +66,8 @@ export const TextWrapper = styled.div`
 
 export const TextTitle = styled.h1`
   color: var(--color-dark-blue);
-  font-size: ${38 / 16}rem;
-  line-height: ${44 / 16}rem;
+  font-size: ${46 / 16}rem;
+  line-height: ${50 / 16}rem;
   font-weight: var(--font-weight-bold);
 
   @media ${QUERIES.phoneAndSmaller} {
@@ -78,7 +78,7 @@ export const TextTitle = styled.h1`
 export const TextDesc = styled.span`
   color: var(--color-dark-gray-blue);
   font-weight: var(--font-weight-regular);
-  max-width: 340px;
+  max-width: 360px;
 
   @media ${QUERIES.tabletAndSmaller} {
     align-self: start;
