@@ -44,6 +44,10 @@ const NavWrapper = styled.nav`
   display: flex;
   gap: 32px;
 
+  @media ${QUERIES.tabletAndSmaller} {
+    gap: 12px;
+  }
+
   @media ${QUERIES.phoneAndSmaller} {
     display: none;
   }
