@@ -5,6 +5,7 @@ import Button from "../Button";
 import { hoverSupported } from "../hoverSupported";
 import { QUERIES } from "../constants";
 import { useRef } from "react";
+import ClickableWrapper from "../ClickableWrapper";
 
 const MyWrapper = styled.div`
   min-height: 250px;
@@ -93,6 +94,11 @@ const SocialImage = styled.img`
   width: 20px;
   height: 20px;
 
+  transition: all 0.3s ease-in-out;
+  ${SocialLink}:focus & {
+    outline: 4px solid var(--color-bright-red);
+  }
+
   @media ${QUERIES.tabletAndSmaller} {
     width: 30px;
     height: 30px;
@@ -145,6 +151,12 @@ const Link = styled.a`
   color: var(--color-very-light-gray);
   font-weight: var(--font-weight-medium);
   transition: all 0.3s ease-in-out;
+
+  border-radius: 4px;
+  &:focus {
+    outline: 2px solid var(--color-bright-red);
+    outline-offset: 5px;
+  }
 
   ${hoverSupported(css`
     &:hover {
@@ -222,41 +234,51 @@ function Footer() {
           <LogoContainer>
             <Logo
               src={"/frontendmentor_13/logo_footer.svg"}
-              alt={"footer logo image"}
+              alt={"footer logo image button"}
             />
           </LogoContainer>
 
           <SocialsWrapper>
-            <SocialLink href={"/"}>
-              <SocialImage
-                src={"/frontendmentor_13/icon-facebook.svg"}
-                alt={"facebook image"}
-              />
-            </SocialLink>
-            <SocialLink href={"/"}>
-              <SocialImage
-                src={"/frontendmentor_13/icon-youtube.svg"}
-                alt={"youtube image"}
-              />
-            </SocialLink>
-            <SocialLink href={"/"}>
-              <SocialImage
-                src={"/frontendmentor_13/icon-twitter.svg"}
-                alt={"twitter image"}
-              />
-            </SocialLink>
-            <SocialLink href={"/"}>
-              <SocialImage
-                src={"/frontendmentor_13/icon-pinterest.svg"}
-                alt={"pinterest image"}
-              />
-            </SocialLink>
-            <SocialLink href={"/"}>
-              <SocialImage
-                src={"/frontendmentor_13/icon-instagram.svg"}
-                alt={"instagram image"}
-              />
-            </SocialLink>
+            <ClickableWrapper>
+              <SocialLink href={"/"}>
+                <SocialImage
+                  src={"/frontendmentor_13/icon-facebook.svg"}
+                  alt={"facebook image button"}
+                />
+              </SocialLink>
+            </ClickableWrapper>
+            <ClickableWrapper>
+              <SocialLink href={"/"}>
+                <SocialImage
+                  src={"/frontendmentor_13/icon-youtube.svg"}
+                  alt={"youtube image button"}
+                />
+              </SocialLink>
+            </ClickableWrapper>
+            <ClickableWrapper>
+              <SocialLink href={"/"}>
+                <SocialImage
+                  src={"/frontendmentor_13/icon-twitter.svg"}
+                  alt={"twitter image button"}
+                />
+              </SocialLink>
+            </ClickableWrapper>
+            <ClickableWrapper>
+              <SocialLink href={"/"}>
+                <SocialImage
+                  src={"/frontendmentor_13/icon-pinterest.svg"}
+                  alt={"pinterest image button"}
+                />
+              </SocialLink>
+            </ClickableWrapper>
+            <ClickableWrapper>
+              <SocialLink href={"/"}>
+                <SocialImage
+                  src={"/frontendmentor_13/icon-instagram.svg"}
+                  alt={"instagram image button"}
+                />
+              </SocialLink>
+            </ClickableWrapper>
           </SocialsWrapper>
         </SocialAndLogoWrapper>
 
@@ -346,42 +368,52 @@ function Footer() {
         </TwinTabletLinksWrapper>
 
         <SocialsWrapper>
-          <SocialLink href={"/"}>
-            <SocialImage
-              src={"/frontendmentor_13/icon-facebook.svg"}
-              alt={"facebook image"}
-            />
-          </SocialLink>
-          <SocialLink href={"/"}>
-            <SocialImage
-              src={"/frontendmentor_13/icon-youtube.svg"}
-              alt={"youtube image"}
-            />
-          </SocialLink>
-          <SocialLink href={"/"}>
-            <SocialImage
-              src={"/frontendmentor_13/icon-twitter.svg"}
-              alt={"twitter image"}
-            />
-          </SocialLink>
-          <SocialLink href={"/"}>
-            <SocialImage
-              src={"/frontendmentor_13/icon-pinterest.svg"}
-              alt={"pinterest image"}
-            />
-          </SocialLink>
-          <SocialLink href={"/"}>
-            <SocialImage
-              src={"/frontendmentor_13/icon-instagram.svg"}
-              alt={"instagram image"}
-            />
-          </SocialLink>
+          <ClickableWrapper>
+            <SocialLink href={"/"}>
+              <SocialImage
+                src={"/frontendmentor_13/icon-facebook.svg"}
+                alt={"facebook image button"}
+              />
+            </SocialLink>
+          </ClickableWrapper>
+          <ClickableWrapper>
+            <SocialLink href={"/"}>
+              <SocialImage
+                src={"/frontendmentor_13/icon-youtube.svg"}
+                alt={"youtube image button"}
+              />
+            </SocialLink>
+          </ClickableWrapper>
+          <ClickableWrapper>
+            <SocialLink href={"/"}>
+              <SocialImage
+                src={"/frontendmentor_13/icon-twitter.svg"}
+                alt={"twitter image button"}
+              />
+            </SocialLink>
+          </ClickableWrapper>
+          <ClickableWrapper>
+            <SocialLink href={"/"}>
+              <SocialImage
+                src={"/frontendmentor_13/icon-pinterest.svg"}
+                alt={"pinterest image button"}
+              />
+            </SocialLink>
+          </ClickableWrapper>
+          <ClickableWrapper>
+            <SocialLink href={"/"}>
+              <SocialImage
+                src={"/frontendmentor_13/icon-instagram.svg"}
+                alt={"instagram image button"}
+              />
+            </SocialLink>
+          </ClickableWrapper>
         </SocialsWrapper>
 
         <LogoContainer>
           <Logo
             src={"/frontendmentor_13/logo_footer.svg"}
-            alt={"footer logo image"}
+            alt={"footer logo image button"}
           />
         </LogoContainer>
 

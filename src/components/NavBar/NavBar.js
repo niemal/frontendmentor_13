@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { hoverSupported } from "../hoverSupported";
 import { QUERIES } from "../constants";
 import { useState } from "react";
+import ClickableWrapper from "../ClickableWrapper";
 
 const Wrapper = styled.div`
   width: clamp(1300px, 8vw, 1400px);
@@ -59,6 +60,12 @@ const NavEntry = styled.a`
   font-weight: var(--font-weight-medium);
   color: var(--color-dark-blue);
   transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+
+  &:focus {
+    outline: 3px solid var(--color-dark-blue);
+    outline-offset: 4px;
+  }
 
   ${hoverSupported(css`
     &:hover {
@@ -164,12 +171,22 @@ function NavBar() {
         <Logo src={"/frontendmentor_13/logo.svg"} alt={"logo image"} />
       </LogoWrapper>
 
-      <NavWrapper>
-        <NavEntry href={"/"}>Pricing</NavEntry>
-        <NavEntry href={"/"}>Product</NavEntry>
-        <NavEntry href={"/"}>About Us</NavEntry>
-        <NavEntry href={"/"}>Careers</NavEntry>
-        <NavEntry href={"/"}>Community</NavEntry>
+      <NavWrapper aria-label={"website menu navigation"}>
+        <ClickableWrapper>
+          <NavEntry href={"/"}>Pricing</NavEntry>
+        </ClickableWrapper>
+        <ClickableWrapper>
+          <NavEntry href={"/"}>Product</NavEntry>
+        </ClickableWrapper>
+        <ClickableWrapper>
+          <NavEntry href={"/"}>About Us</NavEntry>
+        </ClickableWrapper>
+        <ClickableWrapper>
+          <NavEntry href={"/"}>Careers</NavEntry>
+        </ClickableWrapper>
+        <ClickableWrapper>
+          <NavEntry href={"/"}>Community</NavEntry>
+        </ClickableWrapper>
       </NavWrapper>
 
       <ButtonWrapper>

@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { hoverSupported } from "../hoverSupported";
+import ClickableWrapper from "../ClickableWrapper";
 
-const Wrapper = styled.div`
+const Wrapper = styled.button`
   user-select: none;
   padding: 12px 36px;
   background-color: ${(p) =>
@@ -17,6 +18,11 @@ const Wrapper = styled.div`
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
+
+  &:focus {
+    outline: 3px solid var(--color-dark-blue);
+    outline-offset: 4px;
+  }
 
   &:after {
     content: "";
@@ -54,9 +60,11 @@ const Wrapper = styled.div`
 
 function Button({ inverse, children, ...props }) {
   return (
-    <Wrapper inverse={inverse} {...props}>
-      {children}
-    </Wrapper>
+    <ClickableWrapper>
+      <Wrapper inverse={inverse} {...props}>
+        {children}
+      </Wrapper>
+    </ClickableWrapper>
   );
 }
 
